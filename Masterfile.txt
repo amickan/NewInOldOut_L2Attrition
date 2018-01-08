@@ -1,0 +1,148 @@
+﻿English	Dutch	Spanish	Item	Cognate.Spanish.English	Cognate.Spanish.Dutch	Cognate.Dutch.English	Compound.Dutch	Compound.Spanish	Compound.English	Picture	Audio_Spanish	Stem_Eng	Stem_Dutch	Stem_Spa	Eng_Acc	Dutch_Acc	Final 	FreqNLCelexLog	FreqNLCelexMl	FreqENGCelexMl	FreqSubtlexNLLg	FreqSubtlexENGLg	Condition	Syllable_Spa
+ruler	liniaal	regla	3	non-cognate	non-cognate	non-cognate	0	0	0	ruler.png	regla.wav	ru	li	re			1	0	1	7	1,3979	3,63	1	2
+iron	strijkijzer	plancha	1	non-cognate	non-cognate	non-cognate	1	0	0	iron.png	plancha.wav	i	s	plan	0,722222222	0,9	1	0	1	43	1,5051	4,52	1	2
+shovel	schep	pala	1	non-cognate	non-cognate	non-cognate	0	0	0	shovel.png	pala.wav	sho	sch	pa	0,75	0,9	1	0	1	3	2,3075	3,55	1	2
+swing	schommel	columpio	1	non-cognate	non-cognate	non-cognate	0	0	0	swing.png	columpio.wav	s	schom	co	0,777777778	1	1	0,301	2	10	1,8451	4,46	1	4
+coffin	doodskist	ataúd	1	non-cognate	non-cognate	non-cognate		0	0	coffin.png	ataúd.wav	cof	doods	ata	#N/A	#N/A	1	0,301	2	2	2,2175	3,82	1	3
+straw	rietje	paja	1	non-cognate	non-cognate	non-cognate	0	0	0	straw.png	paja.wav	s	riet	pa	0,775	1	1	0,301	2	6	2,0607	4,17	1	2
+seal	zeehond	foca	0	non-cognate	non-cognate	non-cognate		0	0	seal.png	foca.wav	s	zee	fo	#N/A	#N/A	1	0,301	2	2	1,415	4,28	1	2
+drill	boor	taladro	3	non-cognate	non-cognate	non-cognate	0	0	0	drill.png	taladro.wav	d 	b	ta			1	0,301	2	9	2,1818	3,96	1	3
+stork	ooievaar	cigüeña	1	non-cognate	non-cognate	non-cognate		0	0	stork.png	cigüeña.wav	s	ooi	ci	#N/A	#N/A	1	0,301	2	0	1,6435	2,87	1	3
+mop	dweil	fregona	3	non-cognate	non-cognate	non-cognate	0	0	0	mop.png	fregona.wav	m	dw	fre			1	0,4771	3	2	1,8692	3,46	1	3
+turkey	kalkoen	pavo	1	non-cognate	non-cognate	non-cognate		0	0	turkey.png	pavo.wav	tur	kal	pa	#N/A	#N/A	1	0,4771	3	2	2,659	4,35	1	2
+squirrel	eekhoorn	ardilla	1	non-cognate	non-cognate	non-cognate	1	0	0	squirrel.png	ardilla.wav	squir	eek	ar	0,9	1	1	0,4771	3	1	2,4249	3,94	1	3
+zipper	rits	cremallera	1	non-cognate	non-cognate	non-cognate	0	0	0	zipper.png	cremallera.wav	zip	r	cre	0,916666667	1	1	0,4771	3	0	2,2833	2,42	1	4
+shark	haai	tiburón	1	non-cognate	non-cognate	non-cognate	0	0	0	shark.png	tiburón.wav	sh	h	ti	1	1	1	0,4771	3	1	2,617	4,17	1	3
+nurse	verpleger	enfermera	1	non-cognate	non-cognate	non-cognate		0	0	nurse.png	enfermera.wav	n	ver	en	#N/A	#N/A	1	0,6021	4	50	2,0719	4,5	1	4
+peach	perzik	melocotón	1	non-cognate	non-cognate	non-cognate	0	0	0	peach.png	melocotón.wav	p	per	me	0,775	0,85	1	0,6021	4	2	2,0043	3,62	1	4
+snail	slak	caracol	1	non-cognate	non-cognate	non-cognate	0	0	0	snail.png	caracol.wav	s	s	ca	0,833333333	1	1	0,699	5	0	2,0212	3,69	1	3
+wallet	portemonnee	cartera	1	non-cognate	non-cognate	non-cognate	0	0	0	wallet.png	cartera.wav	wal	por	car	0,925	0,975	1	0,699	5	2	2,7404	3,81	1	3
+bracelet	armband	pulsera	1	non-cognate	non-cognate	non-cognate	1	0	0	bracelet.png	pulsera.wav	b	a	pul	0,833333333	0,944444444	1	0,699	5	2	2,4393	3,79	1	3
+stamp	postzegel	sello	1	non-cognate	non-cognate	non-cognate	1	0	0	stamp.png	sello.wav	s	p	se	0,916666667	1	1	0,699	5	16	1,8692	4,2	1	2
+bra	beha	sujetador	1	non-cognate	non-cognate	non-cognate	0	0	0	bra.png	sujetador.wav	b	be	su	0,916666667	1	1	0,699	5	2	2,2577	3,65	1	4
+dice	dobbelsteen	dado	1	non-cognate	non-cognate	non-cognate	1	0	0	dice.png	dado.wav	d	do	da	0,722222222	1	1	0,699	5	0	1,5051	3,71	1	2
+whistle	fluit	silbato	1	non-cognate	non-cognate	non-cognate	0	0	0	whistle.png	silbato.wav	w	f	sil	0,7	0,475	1	0,699	5	3	2,5105	4,25	1	3
+tray	dienblad	bandeja	0	non-cognate	non-cognate	non-cognate		0	0	tray.png	bandeja.wav	t	dien	ban	#N/A	#N/A	1	0,699	5	4	1,7404	4,15	1	3
+brick	baksteen	ladrillo	3	non-cognate	non-cognate	non-cognate	1	0	0	brick.png	ladrillo.wav	b	b	la			1	0,699	5	19	1,9243	4,18	1	3
+tie	stropdas	corbata	1	non-cognate	non-cognate	non-cognate	1	0	0	tie.png	corbata.wav	t	s	cor	0,875	0,9	1	0,7782	6	12	2,2945	4,58	2	3
+parrot	papegaai	loro	1	non-cognate	non-cognate	non-cognate	0	0	0	parrot.png	loro.wav	par	pa	lo	0,75	0,975	1	0,7782	6	2	2,1614	3,84	2	2
+lighter	aansteker	mechero	1	non-cognate	non-cognate	non-cognate	0	0	0	lighter.png	mechero.wav	l	aan	me	0,875	1	1	0,7782	6	0	2,4031	4,13	2	3
+chalk	krijt	tiza	3	non-cognate	non-cognate	non-cognate	0	0	0	chalk.png	tiza.wav	ch	krijt	ti			1	0,7782	6	9	2,7143	3,87	2	2
+hat	muts	gorro	3	non-cognate	non-cognate	non-cognate	0	0	0	hat.png	gorro.wav	h	m	go			1	0,8451	7	35	2,2923	4,76	2	2
+ant	mier	hormiga	1	non-cognate	non-cognate	non-cognate	0	0	0	ant.png	hormiga.wav	a	m	hor			1	0,8451	7	2	2,0492	3,95	2	3
+deer	hert	ciervo	0	non-cognate	non-cognate	non-cognate		0	0	deer.png	ciervo.wav	d	h	cier	#N/A	#N/A	1	0,8451	7	2	2,4298	4,26	2	2
+screw	schroef	navaja	3	non-cognate	non-cognate	non-cognate	0	0	0	screw.png	navaja.wav	s	sch	na			1	0,8451	7	5	1,9395	4,06	2	3
+orange	sinaasappel	naranja	1	non-cognate	non-cognate	non-cognate	1	0	0	orange.png	naranja.wav	o	si	na	0,9	0,925	1	0,9031	8	4	1,8921	4,64	2	3
+pocket	broekzak	bolsillo	1	non-cognate	non-cognate	non-cognate		0	0	pocket.png	bolsillo.wav	pock	broek	bol	#N/A	#N/A	1	0,9542	9	22	2,0682	4,63	2	3
+whip	zweep	látigo	0	non-cognate	non-cognate	non-cognate	0	0	0	whip.png	látigo.wav	w	z	lá	#N/A	#N/A	1	0,9542	9	10	2,3304	4,08	2	3
+frog	kikker	rana	0	non-cognate	non-cognate	non-cognate	0	0	0	frog.png	rana.wav	f	kik	ra	0,875	0,95	1	0,9542	9	13	2,5575	4,05	2	2
+scarf	sjaal	bufanda	1	non-cognate	non-cognate	non-cognate	0	0	0	scarf.png	bufanda.wav	s	s	bu	0,861111111	0,972222222	1	1	10	4	2,3674	3,76	2	3
+nail	spijker	clavo	1	non-cognate	non-cognate	non-cognate	0	0	0	nail.png	clavo.wav	n	spij	cla	0,8	0,95	1	1	10	15	2,1931	4,18	2	2
+drum	trommel	tambor	1	non-cognate	non-cognate	non-cognate		0	0	drum.png	tambor.wav	d	trom	tam	#N/A	#N/A	1	1,301	20	9	1,9138	4,33	2	2
+doll	pop	muñeca	1	non-cognate	non-cognate	non-cognate	0	0	0	doll.png	muñeca.wav	d	p	mu	0,944444444	1	1	1,301	20	2	3,0195	4,07	2	3
+chain	ketting	cadena	0	non-cognate	non-cognate	non-cognate	0	0	0	chain.png	cadena.wav	ch	ket	ca	0,805555556	0,925	1	1,301	20	18	2,9232	4,49	2	3
+basket	mand	canasta	3	non-cognate	non-cognate	non-cognate	0	0	0	basket.png	canasta.wav	bas	m	ca			1	1,301	20	2	2,2765	4,16	2	3
+mushroom	paddenstoel	hongo	1	non-cognate	non-cognate	non-cognate	1	0	0	mushroom.png	hongo.wav	m	pa	hon	0,916666667	0,94	1	1,716	52	1	3,5947	3,15	2	2
+bone	bot 	hueso	1	non-cognate	non-cognate	non-cognate	0	0	0	bone.png	hueso.wav	b	b	hue	0,925	1	1	1,716	52	1	3,5947	3,15	2	2
+bull 	stier	toro	0	non-cognate	non-cognate	non-cognate		0	0	bull .png	toro.wav	b	s	to	#N/A	#N/A	1	1,716	52	1	3,5947	3,15	2	2
+bridge	brug	puente	0	non-cognate	non-cognate	non-cognate	0	0	0	bridge.png	puente.wav	b	b	puen	0,925	0,975	1	1,716	52	81	3,2851	4,71	2	2
+chair	stoel	silla	0	non-cognate	non-cognate	non-cognate	0	0	0	chair.png	silla.wav	ch	s	si	1	1	1	2,179	151	26	3,3502	4,66	2	2
+garlic	knoflook	ajo	1	non-cognate	non-cognate	non-cognate	1	0	0	garlic.png	ajo.wav	gar	k	a	0,916666667	0,916666667	1	10,414	11	0	2,2856	4,45	2	2
+sausage	worst	salchicha	1	non-cognate	non-cognate	non-cognate	0	0	0	sausage.png	salchicha.wav	sau	w	sal	0,944444444	0,916666667	1	10,414	11	2	2,5855	4,23	2	3
+axe	bijl	hacha	1	non-cognate	non-cognate	non-cognate	0	0	0	axe.png	hacha.wav	a	b	ha	0,722222222	0,972222222	1	10,414	11	2	2,6085	3,85	3	2
+cabbage	kool	repollo	1	non-cognate	non-cognate	non-cognate		0	0	cabbage.png	repollo.wav	cab	k	re	#N/A	#N/A	1	10,414	11	2	2,3181	4,07	3	3
+donkey	ezel	burro	1	non-cognate	non-cognate	non-cognate	0	0	0	donkey.png	burro.wav	don	e	bu	0,85	0,925	1	10,792	12	1	2,699	3,99	3	2
+pencil	potlood	lápiz	1	non-cognate	non-cognate	non-cognate	1	0	0	pencil.png	lápiz.wav	pen	pot	lá	0,9	1	1	10,792	12	5	2,3784	3,98	3	2
+heel	hak	tacón	0	non-cognate	non-cognate	non-cognate		0	0	heel.png	tacón.wav	h	h	ta	#N/A	#N/A	1	10,792	12	5	2,5551	3,81	3	2
+lightning	bliksem	rayo	1	non-cognate	non-cognate	non-cognate		0	0	lightning.png	rayo.wav	light	blik	ra	#N/A	#N/A	1	11,139	13	4	2,6684	4	3	2
+glove	handschoen	guante	1	non-cognate	non-cognate	non-cognate	1	0	0	glove.png	guante.wav	g	h	guan	0,75	1	1	11,139	13	4	2,4669	3,81	3	2
+waiter	ober	camarero	1	non-cognate	non-cognate	non-cognate		0	0	waiter.png	camarero.wav	wai	o	ca	#N/A	#N/A	1	11,461	14	7	2,6425	3,66	3	4
+coin	munt	moneda	1	non-cognate	non-cognate	non-cognate	0	0	0	coin.png	moneda.wav	c	m	mo	0,8	0,875	1	11,461	14	7	2,6785	4,05	3	3
+match	lucifer	cerillo	3	non-cognate	non-cognate	non-cognate	0	0	0	match.png	cerillo.wav	m	lu	ce			1	11,761	15	39	2,4518	5,12	3	3
+arrow	pijl	flecha	1	non-cognate	non-cognate	non-cognate	0	0	0	arrow.png	flecha.wav	ar	p	fle	0,861111111	0,944444444	1	12,041	16	21	2,4942	3,78	3	2
+moustache	snor	bigote	1	non-cognate	non-cognate	non-cognate	0	0	0	moustache.png	bigote.wav	mous	s	bi	1	1	1	12,304	17	3	2,6395	3,8	3	3
+fly	vlieg	mosca	1	non-cognate	non-cognate	non-cognate	0	0	0	fly.png	mosca.wav	f	v	mos	0,8	0,95	1	12,553	18	12	3,1045	4,9	3	2
+onion	ui	cebolla	1	non-cognate	non-cognate	non-cognate	0	0	0	onion.png	cebolla.wav	on	u	ce	0,975	1	1	12,553	18	2	2,0128	4,28	3	3
+spoon	lepel	cuchara	1	non-cognate	non-cognate	non-cognate	0	0	0	spoon.png	cuchara.wav	s	le	cu	1	1	1	12,553	18	2	2,3424	4,29	3	3
+skull	schedel	calavera	1	non-cognate	non-cognate	non-cognate		0	0	skull.png	calavera.wav	s	sche	ca	#N/A	#N/A	1	12,788	19	5	2,8028	4,04	3	4
+belt	riem	cinturón	1	non-cognate	non-cognate	non-cognate	0	0	0	belt.png	cinturón.wav	b	r	cin	0,75	0,9	1	13,424	22	17	2,7924	4,32	3	3
+bucket	emmer	cubo	1	non-cognate	non-cognate	non-cognate	0	0	0	bucket.png	cubo.wav	b	em	cu	0,85	1	1	13,424	22	7	2,4698	4,21	3	2
+cage	kooi	jaula	1	non-cognate	non-cognate	non-cognate	0	0	0	cage.png	jaula.wav	c	k	jau	0,777777778	0,805555556	1	13,617	23	3	2,7818	4,03	3	2
+candle	kaars	vela	1	non-cognate	non-cognate	non-cognate	0	0	0	candle.png	vela.wav	can	k	ve	0,975	1	1	13,617	23	5	2,4116	3,79	3	2
+duck	eend	pato	1	non-cognate	non-cognate	non-cognate	0	0	0	duck.png	pato.wav	d	e	pa	0,972222222	0,972222222	1	13,802	24	9	2,5955	4,53	3	2
+sleeve	mouw	manga	1	non-cognate	non-cognate	non-cognate	0	0	0	sleeve.png	manga.wav	s	m	man	0,75	1	1	13,979	25	8	2,2648	3,88	3	2
+pillow	kussen	almohada	0	non-cognate	non-cognate	non-cognate	0	0	0	pillow.png	almohada.wav	pil	kus	al	0,9	1	1	14,624	29	5	3,3002	3,73	3	4
+bullet	kogel	bala	0	non-cognate	non-cognate	non-cognate	0	0	0	bullet.png	bala.wav	bul	ko	ba	0,825	0,975	1	14,624	29	4	3,2817	4,08	3	2
+bush	struik	arbusto	3	non-cognate	non-cognate	non-cognate	0	0	0	bush.png	arbusto.wav	b	s	ar			1	14,771	30	5	2,0755	4,29	3	3
+thumb	duim	pulgar	0	non-cognate	non-cognate	non-cognate		0	0	thumb.png	pulgar.wav	th	d	pul	#N/A	#N/A	1	14,771	30	6	2,6749	3,97	3	2
+skirt	rok	falda	0	non-cognate	non-cognate	non-cognate	0	0	0	skirt.png	falda.wav	s	r	fal	0,95	1	1	14,914	31	12	2,5011	3,81	3	2
+blanket	deken	manta	1	non-cognate	non-cognate	non-cognate	0	0	0	blanket.png	manta.wav	blan	de	man	0,725	0,8	1	15,185	33	10	2,7938	3,93	3	2
+bowl	kom	cuenco	0	non-cognate	non-cognate	non-cognate	0	0	0	bowl.png	cuenco.wav	b	k	cuen	0,75	0,666666667	1	15,315	34	10	5,0578	4,69	3	2
+watch	horloge	reloj	0	non-cognate	non-cognate	non-cognate	0	0	0	watch.png	reloj.wav	w	hor	re	0,975	0,975	1	15,315	34	25	3,091	5,3	3	2
+rope	touw	soga	0	non-cognate	non-cognate	non-cognate	0	0	0	rope.png	soga.wav	r	t	so	0,875	1	1	15,563	36	2	3,0603	4,3	3	2
+carrot	wortel	zanahoria	0	non-cognate	non-cognate	non-cognate	0	0	0	carrot.png	zanahoria.wav	car	wor	za	0,975	0,925	1	15,682	37	2	2,4281	4,08	3	5
+root	wortel	raíz	0	non-cognate	non-cognate	non-cognate	0	0	0	root.png	raíz.wav	r	wor	ra	0,475	0,925	1	15,682	37	45	2,4281	4,13	3	2
+wing	vleugel	ala	1	non-cognate	non-cognate	non-cognate		0	0	wing.png	ala.wav	w	vleu	a	#N/A	#N/A	1	15,798	38	21	2,5877	4,46	3	2
+painting	schilderij	cuadro	0	non-cognate	non-cognate	non-cognate	0	0	0	painting.png	cuadro.wav	pain	schil	cua	1	1	1	15,798	38	40	2,9741	4,77	3	2
+knife	mes	cuchillo	0	non-cognate	non-cognate	non-cognate	0	0	0	knife.png	cuchillo.wav	k	m	cu	0,975	1	1	16,128	41	14	3,306	4,49	3	3
+jail	gevangenis	cárcel	1	non-cognate	non-cognate	non-cognate		0	0	jail.png	cárcel.wav	j	ge	cár	#N/A	#N/A	1	16,335	43	26	3,6616	4,36	3	2
+mug	kopje	taza	0	non-cognate	non-cognate	non-cognate		0	0	mug.png	taza.wav	m	kop	ta	#N/A	#N/A	1	16,721	47	6	2,9227	3,93	3	2
+wood	hout	madera	0	non-cognate	non-cognate	non-cognate	0	0	0	wood.png	madera.wav	w	h	ma	0,95	0,95	1	16,812	48	39	3,0137	4,78	3	3
+cloud	wolk	nube	0	non-cognate	non-cognate	non-cognate	0	0	0	cloud.png	nube.wav	c	w	nu	0,9	0,95	1	16,812	48	17	2,3784	4,77	3	2
+wave	golf	ola	0	non-cognate	non-cognate	non-cognate	0	0	0	wave.png	ola.wav	w	g	o	0,975	0,95	1	17,853	61	61	2,8854	4,55	3	2
+judge	rechter	juez	0	non-cognate	non-cognate	non-cognate		0	0	judge.png	juez.wav	j	rech	j	#N/A	#N/A	1	18,633	73	66	3,4422	4,69	3	2
+leaf	blad	hoja	0	non-cognate	non-cognate	non-cognate	0	0	0	leaf.png	hoja.wav	l	b	ho	0,825	0,675	1	20,569	114	32	2,6884	4,29	3	2
+tree	boom	árbol	0	non-cognate	non-cognate	non-cognate	0	0	0	tree.png	árbol.wav	t	b	ár	0,975	1	1	21,367	137	34	3,3591	4,95	3	2
+horse	paard	caballo	0	non-cognate	non-cognate	non-cognate	0	0	0	horse.png	caballo.wav	h	p	ca	1	1	1	21,987	158	40	3,5632	4,99	3	3
+goal	doel	portería	1	non-cognate	non-cognate	non-cognate		0	0	goal.png	portería.wav	g	d	por	#N/A	#N/A	1	22,175	165	10	3,5299	4,97	3	4
+window	raam	ventana	0	non-cognate	non-cognate	non-cognate	0	0	0	window.png	ventana.wav	win	r	ven	0,95	0,95	1	22,405	174	58	3,4912	4,84	3	3
+leg	been	pierna	0	non-cognate	non-cognate	non-cognate	0	0	0	leg.png	pierna.wav	l	b	pier	#N/A	#N/A	1	22,504	178	31	3,3703	4,88	3	2
+back	rug	espalda	0	non-cognate	non-cognate	non-cognate		0	0	back.png	espalda.wav	b	r	es	#N/A	#N/A	1	22,553	180	147	3,5483	6,25	3	3
+church	kerk	iglesia	0	non-cognate	non-cognate	non-cognate		0	0	church.png	iglesia.wav	ch	k	i	#N/A	#N/A	1	23,118	205	121	3,5412	5,02	3	4
+raccoon	wasbeer	mapache	1	non-cognate	non-cognate	non-cognate		0	0	raccoon.png	mapache.wav	rac 	was	ma	#N/A	#N/A	0	0	0	0	1,8451	2,57	3	3
+skunk	stinkdier	mofeta	1	non-cognate	non-cognate	non-cognate		0	0	skunk.png	mofeta.wav	s	stink	mo	#N/A	#N/A	0	0	0	0	1,9685	3,36	3	3
+candy	snoep	caramelos	1	non-cognate	non-cognate	non-cognate		0	0	candy.png	caramelos.wav	can	s	ca	#N/A	#N/A	0	0,4771	3	0	1,1761	3,83	3	4
+broom	bezem	escoba	3	non-cognate	non-cognate	non-cognate	0	0	0	broom.png	escoba.wav	b	be	es			0	0,6021	4	0	2,2227	3,56	3	3
+cherry	kers	cereza	1	non-cognate	non-cognate	non-cognate		0	0	cherry.png	cereza.wav	cher	k	ce	#N/A	#N/A	0	0,699	5	2	1,8573	4,23	3	3
+turtle	schildpad	tortuga	1	non-cognate	non-cognate	non-cognate	1	0	0	turtle.png	tortuga.wav	tur	sch	tor	0,775	1	0	0,7782	6	0	2,2833	3,64	3	3
+scissors	schaar	tijeras	1	non-cognate	non-cognate	non-cognate	0	0	0	scissors.png	tijeras.wav	sci	sch 	ti	0,8	1	0	0,8451	7	2	2,4456	3,92	3	3
+panties	onderbroek	braga	1	non-cognate	non-cognate	non-cognate		0	0	panties.png	braga.wav	pan	on	bra	#N/A	#N/A	0	0,9031	8	0	2,5159	2,7	3	2
+crutch	krukken	muleta	1	non-cognate	non-cognate	non-cognate		0	0	crutch.png	muleta.wav	c	kruk	mul	#N/A	#N/A	0	0,9542	9	1	2,0531	2,72	3	3
+spider	spin	araña	1	non-cognate	non-cognate	non-cognate	0	0	0	spider.png	araña.wav	spi	s	a	0,975	0,975	0	0,9542	9	2	2,534	4,24	3	3
+monkey	aap	mono	1	non-cognate	non-cognate	non-cognate	0	0	0	monkey.png	mono.wav	mon	a	mo	0,916666667	0,972222222	0	1,301	20	7	3,0969	4,38	3	2
+screen	scherm	pantalla	0	non-cognate	non-cognate	non-cognate		0	0	screen.png	pantalla.wav	s	sch	pan	#N/A	#N/A	0	1,301	20	30	2,7774	4,61	3	3
+grapes	druiven	uvas	1	non-cognate	non-cognate	non-cognate	0	0	0	grapes.png	uvas.wav	g	drui	u	0,775	0,975	0	1,716	52	1	3,5947	3,15	3	2
+lettuce	sla 	lechuga	1	non-cognate	non-cognate	non-cognate		0	0	lettuce.png	lechuga.wav	let	s	le	#N/A	#N/A	0	1,716	52	1	3,5947	3,15	3	3
+ear 	oor 	oreja	1	non-cognate	non-cognate	non-cognate		0	0	ear .png	oreja.wav	e	o	o	#N/A	#N/A	0	1,716	52	1	3,5947	3,15	3	3
+garbage	afval	basura	0	non-cognate	non-cognate	non-cognate		0	0	garbage.png	basura.wav	gar	af	ba	#N/A	#N/A	0	11,139	13	2	2,7364	3,45	3	3
+scar	litteken	cicatriz	0	non-cognate	non-cognate	non-cognate		0	0	scar.png	cicatriz.wav	s	lit	ci	#N/A	#N/A	0	11,461	14	1	2,6335	3,6	3	3
+sailor	zeeman	marinero	1	non-cognate	non-cognate	non-cognate		0	0	sailor.png	marinero.wav	sai	zee	ma	#N/A	#N/A	0	11,461	14	3	2,3424	3,75	3	4
+nipple	tepel	pezón	1	non-cognate	non-cognate	non-cognate		0	0	nipple.png	pezón.wav	nip	te	pe	#N/A	#N/A	0	12,041	16	0	1,9494	3,07	3	2
+needle	naald	aguja	1	non-cognate	non-cognate	non-cognate	0	0	0	needle.png	aguja.wav	nee	n	ag	0,75	0,975	0	12,041	16	4	2,5717	3,93	3	3
+lid	deksel	tapa	3	non-cognate	non-cognate	non-cognate	0	0	0	lid.png	tapa.wav	l	dek	ta			0	12,553	18	1	2,0682	4,16	3	2
+pigeon	duif	paloma	1	non-cognate	non-cognate	non-cognate	0	0	0	pigeon.png	paloma.wav	pi	d	pa	#N/A	0,975	0	12,788	19	9	2,3711	4,03	3	3
+gift	cadeau	regalo	1	non-cognate	non-cognate	non-cognate		0	0	gift.png	regalo.wav	g	ca	re	#N/A	#N/A	0	13,424	22	20	3,1079	4,44	3	3
+snake	slang	serpiente	1	non-cognate	non-cognate	non-cognate	0	0	0	snake.png	serpiente.wav	s	s	ser	#N/A	#N/A	0	14,314	27	9	2,9754	4,36	3	3
+fence	hek	alambrada	3	non-cognate	non-cognate	non-cognate	0	0	0	fence.png	alambrada.wav	fen	h	a			0	14,914	31	10	2,9987	4,31	3	4
+glasses	bril	gafas	0	non-cognate	non-cognate	non-cognate	0	0	0	glasses.png	gafas.wav	glas	b	ga	0,975	1	0	15,563	36	7	3,0302	4,37	3	2
+fist	vuist	puño	0	non-cognate	non-cognate	non-cognate		0	0	fist.png	puño.wav	f	v	pun	#N/A	#N/A	0	15,682	37	4	2,4728	3,68	3	2
+purse	tas	bolso	0	non-cognate	non-cognate	non-cognate	0	0	0	purse.png	bolso.wav	p	t	bol	0,3	0,8	0	15,798	38	5	3,4071	3,92	3	2
+dress	jurk	vestido	0	non-cognate	non-cognate	non-cognate	0	0	0	dress.png	vestido.wav	d	j	ves	1	1	0	16,232	42	27	3,3872	4,85	3	3
+wardrobe	kast	armario	3	non-cognate	non-cognate	non-cognate	0	0	1	wardrobe.png	armario.wav	w	k	ar			0	16,812	48	3	3,1189	4,1	3	4
+key	sleutel	llave	0	non-cognate	non-cognate	non-cognate	0	0	0	key.png	llave.wav	k	sleu	lla	1	1	0	16,902	49	38	3,5478	5,07	3	2
+coat	jas	abrigo	0	non-cognate	non-cognate	non-cognate	0	0	0	coat.png	abrigo.wav	c	j	a	0,65	0,95	0	16,902	49	16	3,3233	4,41	3	3
+beach	strand	playa	0	non-cognate	non-cognate	non-cognate		0	0	beach.png	playa.wav	b	s	pla	#N/A	#N/A	0	17,076	51	19	3,2448	4,72	3	2
+mirror	spiegel	espejo	0	non-cognate	non-cognate	non-cognate	0	0	0	mirror.png	espejo.wav	mir	spie	es	1	1	0	17,076	51	18	3,0795	4,45	3	3
+branch	tak	rama	3	non-cognate	non-cognate	non-cognate	0	0	0	branch.png	rama.wav	b	t	ra			0	17,324	54	30	2,5705	4,1	3	2
+suit	pak	traje	0	non-cognate	non-cognate	non-cognate	0	0	0	suit.png	traje.wav	s	p	tra	0,925	0,95	0	17,853	61	24	4,1366	4,59	3	2
+egg	ei	huevo	0	non-cognate	non-cognate	non-cognate	0	0	0	egg.png	huevo.wav	e	e	hue	1	1	0	18,261	67	57	2,8506	4,8	3	2
+lock	slot	cerradura	1	non-cognate	non-cognate	non-cognate	0	0	0	lock.png	cerradura.wav	l	s	cer	0,75	0,85	0	18,573	72	5	3,3608	4,42	3	4
+meat	vlees	carne	0	non-cognate	non-cognate	non-cognate	0	0	0	meat.png	carne.wav	m	v	car	#N/A	#N/A	0	19,085	81	15	3,431	4,8	3	2
+bird	vogel	pájaro	0	non-cognate	non-cognate	non-cognate	0	0	0	bird.png	pájaro.wav	b	vo	pá	0,972222222	0,944444444	0	19,823	96	33	3,1498	4,85	3	3
+chest	borst	pecho	0	non-cognate	non-cognate	non-cognate		0	0	chest.png	pecho.wav	ch	b	pe	#N/A	#N/A	0	20,531	113	9	3,0667	4,48	3	2
+dog	hond	perro	1	non-cognate	non-cognate	non-cognate	0	0	0	dog.png	perro.wav	d	h	pe	0,95	0,975	0	22,253	168	54	3,8678	5,17	3	2
+can	blik	lata	3	non-cognate	non-cognate	non-cognate	0	0	0	can.png	lata.wav	c	b	la			0	22,742	188	2	3,2006	6,56	3	2
+car	auto	coche	0	non-cognate	non-cognate	non-cognate	0	0	0	car.png	coche.wav	c	au	co	1	1	0	23,181	208	366	4,3017	5,44	3	2
+girl	meisje	chica 	0	non-cognate	non-cognate	non-cognate		0	0	girl.png	chica .wav	g	meis	chi	#N/A	#N/A	0	25,527	357	220	4,2237	5,29	3	2
+boy	jongen	chico	0	non-cognate	non-cognate	non-cognate		0	0	boy.png	chico.wav	b	jong	chi	#N/A	#N/A	0	25,563	360	146	4,28	5,28	3	2
+woman	vrouw	mujer	1	non-cognate	non-cognate	non-cognate		0	0	woman.png	mujer.wav	wo	v	mu	#N/A	#N/A	0	29,542	900	504	4,5555	5,22	3	2
