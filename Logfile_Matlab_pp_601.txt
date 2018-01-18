@@ -1,0 +1,148 @@
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 11 items were unknown in English and need to be replaced. ########
+###########################################################################################
+{Subscripted assignment dimension mismatch.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('MakeLists', '\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m', 119)" style="font-weight:bold">MakeLists</a> (<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',119,0)">line 119</a>)
+    LabelUnknown(:,1) = Label(indices(:));
+} 
+opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',119,0)
+randperm((items/2))
+{Undefined function or variable 'items'.
+} 
+ordering = randperm((items/2));
+{Undefined function or variable 'items'.
+} 
+items=50
+
+items =
+
+    50
+
+ordering = randperm((items/2));
+load('masterfile.mat')
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
+###########################################################################################
+####### A possible replacement for item 1 out of 7 has been found. #######
+{Reference to a cleared variable condinf.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('MakeLists', '\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m', 966)" style="font-weight:bold">MakeLists</a> (<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',966,0)">line 966</a>)
+                                if final{i,condinf} == 1
+} 
+opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',966,0)
+MakeLists(601)
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
+###########################################################################################
+####### A possible replacement for item 1 out of 7 has been found. #######
+##############################################################
+####### GOOD NEWS: item 1 out of 7 has been replaced. #######
+##############################################################
+####### A possible replacement for item 2 out of 7 has been found. #######
+##############################################################
+####### GOOD NEWS: item 2 out of 7 has been replaced. #######
+##############################################################
+####### A possible replacement for item 3 out of 7 has been found. #######
+##############################################################
+####### GOOD NEWS: item 3 out of 7 has been replaced. #######
+##############################################################
+{Reference to a cleared variable ind4.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('MakeLists', '\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m', 870)" style="font-weight:bold">MakeLists</a> (<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',870,0)">line 870</a>)
+                    ind5 = ind1(ind4);
+} 
+opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',870,0)
+MakeLists(601)
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
+###########################################################################################
+<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',857,1)">857 </a>                    bla6 = find(ismember(wordsSim, finalrepnoncomp(:,1)));
+if system_dependent('IsDebugMode')==1, dbquit; end
+MakeLists(601)
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
+###########################################################################################
+<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',148,1)">148 </a>    indicesreplace = find(strcmp(Answers((items+1):length(Answers)),'1'));
+load('masterfile.mat')
+if system_dependent('IsDebugMode')==1, dbquit; end
+MakeLists(601)
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
+###########################################################################################
+<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',857,1)">857 </a>                    bla6 = find(ismember(wordsSim, finalrepnoncomp(:,1)));
+if system_dependent('IsDebugMode')==1, dbcont; end
+####### A possible replacement for item 1 out of 7 has been found. #######
+##############################################################
+####### GOOD NEWS: item 1 out of 7 has been replaced. #######
+##############################################################
+####### A possible replacement for item 2 out of 7 has been found. #######
+##############################################################
+####### GOOD NEWS: item 2 out of 7 has been replaced. #######
+##############################################################
+####### A possible replacement for item 3 out of 7 has been found. #######
+##############################################################
+####### GOOD NEWS: item 3 out of 7 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+####### A possible replacement for item 4 out of 7 has been found. #######
+##############################################################
+####### GOOD NEWS: item 4 out of 7 has been replaced. #######
+##############################################################
+####### A possible replacement for item 5 out of 7 has been found. #######
+##############################################################
+####### GOOD NEWS: item 5 out of 7 has been replaced. #######
+##############################################################
+####### A possible replacement for item 6 out of 7 has been found. #######
+##############################################################
+####### GOOD NEWS: item 6 out of 7 has been replaced. #######
+##############################################################
+####### A possible replacement for item 7 out of 7 has been found. #######
+##############################################################
+####### GOOD NEWS: item 7 out of 7 has been replaced. #######
+##############################################################
+###########################################################
+####### All items have been successfully replaced! ########
+###########################################################
+##################################################
+####### Starting list making process now! ########
+##################################################
+###### Familiarization list is done. #######
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load')" style="font-weight:bold">load</a>
+Unable to read file 'random5_answers_2AFC.mat'. No such file or directory.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('MakeLists', '\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m', 2061)" style="font-weight:bold">MakeLists</a> (<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',2061,0)">line 2061</a>)
+          answermat1 = load('random5_answers_2AFC.mat');
+} 
+MakeLists(601)
