@@ -4,50 +4,6 @@
 Participant number: 601
 Interference condition: 2
 ###########################################################################################
-####### START REPLACEMENT: 11 items were unknown in English and need to be replaced. ########
-###########################################################################################
-{Subscripted assignment dimension mismatch.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('MakeLists', '\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m', 119)" style="font-weight:bold">MakeLists</a> (<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',119,0)">line 119</a>)
-    LabelUnknown(:,1) = Label(indices(:));
-} 
-opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',119,0)
-randperm((items/2))
-{Undefined function or variable 'items'.
-} 
-ordering = randperm((items/2));
-{Undefined function or variable 'items'.
-} 
-items=50
-
-items =
-
-    50
-
-ordering = randperm((items/2));
-load('masterfile.mat')
-#####################################################################
-################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
-#####################################################################
-Participant number: 601
-Interference condition: 2
-###########################################################################################
-####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
-###########################################################################################
-####### A possible replacement for item 1 out of 7 has been found. #######
-{Reference to a cleared variable condinf.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('MakeLists', '\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m', 966)" style="font-weight:bold">MakeLists</a> (<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',966,0)">line 966</a>)
-                                if final{i,condinf} == 1
-} 
-opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',966,0)
-MakeLists(601)
-#####################################################################
-################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
-#####################################################################
-Participant number: 601
-Interference condition: 2
-###########################################################################################
 ####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
 ###########################################################################################
 ####### A possible replacement for item 1 out of 7 has been found. #######
@@ -62,60 +18,6 @@ Interference condition: 2
 ##############################################################
 ####### GOOD NEWS: item 3 out of 7 has been replaced. #######
 ##############################################################
-{Reference to a cleared variable ind4.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('MakeLists', '\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m', 870)" style="font-weight:bold">MakeLists</a> (<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',870,0)">line 870</a>)
-                    ind5 = ind1(ind4);
-} 
-opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',870,0)
-MakeLists(601)
-#####################################################################
-################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
-#####################################################################
-Participant number: 601
-Interference condition: 2
-###########################################################################################
-####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
-###########################################################################################
-<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',857,1)">857 </a>                    bla6 = find(ismember(wordsSim, finalrepnoncomp(:,1)));
-if system_dependent('IsDebugMode')==1, dbquit; end
-MakeLists(601)
-#####################################################################
-################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
-#####################################################################
-Participant number: 601
-Interference condition: 2
-###########################################################################################
-####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
-###########################################################################################
-<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',148,1)">148 </a>    indicesreplace = find(strcmp(Answers((items+1):length(Answers)),'1'));
-load('masterfile.mat')
-if system_dependent('IsDebugMode')==1, dbquit; end
-MakeLists(601)
-#####################################################################
-################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
-#####################################################################
-Participant number: 601
-Interference condition: 2
-###########################################################################################
-####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
-###########################################################################################
-<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',857,1)">857 </a>                    bla6 = find(ismember(wordsSim, finalrepnoncomp(:,1)));
-if system_dependent('IsDebugMode')==1, dbcont; end
-####### A possible replacement for item 1 out of 7 has been found. #######
-##############################################################
-####### GOOD NEWS: item 1 out of 7 has been replaced. #######
-##############################################################
-####### A possible replacement for item 2 out of 7 has been found. #######
-##############################################################
-####### GOOD NEWS: item 2 out of 7 has been replaced. #######
-##############################################################
-####### A possible replacement for item 3 out of 7 has been found. #######
-##############################################################
-####### GOOD NEWS: item 3 out of 7 has been replaced. #######
-##############################################################
-####### No item found for replacement this round. #######
-####### No item found for replacement this round. #######
 ####### A possible replacement for item 4 out of 7 has been found. #######
 ##############################################################
 ####### GOOD NEWS: item 4 out of 7 has been replaced. #######
@@ -139,10 +41,293 @@ if system_dependent('IsDebugMode')==1, dbcont; end
 ####### Starting list making process now! ########
 ##################################################
 ###### Familiarization list is done. #######
-{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load')" style="font-weight:bold">load</a>
-Unable to read file 'random5_answers_2AFC.mat'. No such file or directory.
+###### 2AFC Pic (multiple choice) list is done. #######
+###### Picture naming lists for learning session are done. #######
+###### Stem completion list for learning session is done. #######
+###### Posttest list for learning phase is done. #######
+###### ALL LISTS FOR LEARNING SESSION HAVE BEEN SUCCESSFULLY CREATED. #######
+###### Final test list is done. #######
+##############################################################
+######### SUCCESS: ALL LISTS HAVE BEEN CREATED! ##########
+##############################################################
+###### Close Matlab now, lists have been saved already. #######
+##############################################################
+MakeLists(602)
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 10 items were unknown in English and need to be replaced. ########
+###########################################################################################
+####### No item found for replacement this round. #######
+####### A possible replacement for item 1 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 1 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 2 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 2 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 3 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 3 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 4 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 4 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 5 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 5 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 6 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 6 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 7 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 7 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 8 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 8 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 9 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 9 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 10 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 10 out of 10 has been replaced. #######
+##############################################################
+###########################################################
+####### All items have been successfully replaced! ########
+###########################################################
+##################################################
+####### Starting list making process now! ########
+##################################################
+###### Familiarization list is done. #######
+###### 2AFC Pic (multiple choice) list is done. #######
+###### Picture naming lists for learning session are done. #######
+###### Stem completion list for learning session is done. #######
+###### Posttest list for learning phase is done. #######
+###### ALL LISTS FOR LEARNING SESSION HAVE BEEN SUCCESSFULLY CREATED. #######
+###### Final test list is done. #######
+##############################################################
+######### SUCCESS: ALL LISTS HAVE BEEN CREATED! ##########
+##############################################################
+###### Close Matlab now, lists have been saved already. #######
+##############################################################
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 10 items were unknown in English and need to be replaced. ########
+###########################################################################################
+####### No item found for replacement this round. #######
+{Reference to a cleared variable Englevdislongnum.
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('MakeLists', '\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m', 2061)" style="font-weight:bold">MakeLists</a> (<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',2061,0)">line 2061</a>)
-          answermat1 = load('random5_answers_2AFC.mat');
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('MakeLists', '\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m', 997)" style="font-weight:bold">MakeLists</a> (<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',997,0)">line 997</a>)
+                        words2 = find(Englevdislongnum(:,1) == wordrepla);
 } 
+opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',997,0)
 MakeLists(601)
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 10 items were unknown in English and need to be replaced. ########
+###########################################################################################
+####### No item found for replacement this round. #######
+####### A possible replacement for item 1 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 1 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 2 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 2 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 3 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 3 out of 10 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 4 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 5 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 5 out of 10 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 6 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 7 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 7 out of 10 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 8 out of 10 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 9 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 10 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 10 out of 10 has been replaced. #######
+##############################################################
+##################################################################################################################
+####### PROBLEM: Replacement process could not be finished. ########
+##################################################################################################################
+### Trying replacement with more lenient criteria now. ###
+####### No item found for replacement this round. #######
+####### A possible replacement for item 1 out of 10 has been found. #######
+#############################################################
+####### GOOD NEWS: item 1 out of 10 has been replaced. #######
+#############################################################
+####### A possible replacement for item 2 out of 10 has been found. #######
+#############################################################
+####### GOOD NEWS: item 2 out of 10 has been replaced. #######
+#############################################################
+####### A possible replacement for item 3 out of 10 has been found. #######
+#############################################################
+####### GOOD NEWS: item 3 out of 10 has been replaced. #######
+#############################################################
+####### No item found for replacement this round. #######
+#############################################################
+####### GOOD NEWS: item 4 out of 10 has been replaced. #######
+#############################################################
+####### A possible replacement for item 5 out of 10 has been found. #######
+#############################################################
+####### GOOD NEWS: item 5 out of 10 has been replaced. #######
+#############################################################
+####### No item found for replacement this round. #######
+#############################################################
+####### GOOD NEWS: item 6 out of 10 has been replaced. #######
+#############################################################
+####### A possible replacement for item 7 out of 10 has been found. #######
+#############################################################
+####### GOOD NEWS: item 7 out of 10 has been replaced. #######
+#############################################################
+####### No item found for replacement this round. #######
+#############################################################
+####### GOOD NEWS: item 8 out of 10 has been replaced. #######
+#############################################################
+####### No item found for replacement this round. #######
+#############################################################
+####### GOOD NEWS: item 9 out of 10 has been replaced. #######
+#############################################################
+####### A possible replacement for item 10 out of 10 has been found. #######
+#############################################################
+####### GOOD NEWS: item 10 out of 10 has been replaced. #######
+#############################################################
+####################################################################
+########## PROBLEM: Replacement process did not succeed. ###########
+###### Unfortunately, you have to send the participant home. #######
+####################################################################
+MakeLists(601)
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 10 items were unknown in English and need to be replaced. ########
+###########################################################################################
+####### No item found for replacement this round. #######
+####### A possible replacement for item 1 out of 10 has been found. #######
+{Reference to a cleared variable distval2.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('MakeLists', '\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m', 1085)" style="font-weight:bold">MakeLists</a> (<a href="matlab: opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',1085,0)">line 1085</a>)
+                        if hval == 0 && val == 1 && valuelength == 0 && distval == 1 && distval2 == 1 && freqval ==0 && syllengval == 0
+} 
+opentoline('\\CNAS.RU.NL\U570176\PhD\EXPERIMENT 3 -Honours\Script\MakeLists.m',1085,0)
+MakeLists(601)
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 601
+Interference condition: 2
+###########################################################################################
+####### START REPLACEMENT: 10 items were unknown in English and need to be replaced. ########
+###########################################################################################
+####### No item found for replacement this round. #######
+####### A possible replacement for item 1 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 1 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 2 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 2 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 3 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 3 out of 10 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+####### A possible replacement for item 4 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 4 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 5 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 5 out of 10 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+####### A possible replacement for item 6 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 6 out of 10 has been replaced. #######
+##############################################################
+####### A possible replacement for item 7 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 7 out of 10 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+####### A possible replacement for item 8 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 8 out of 10 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+####### A possible replacement for item 9 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 9 out of 10 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+####### A possible replacement for item 10 out of 10 has been found. #######
+##############################################################
+####### GOOD NEWS: item 10 out of 10 has been replaced. #######
+##############################################################
+###########################################################
+####### All items have been successfully replaced! ########
+###########################################################
+##################################################
+####### Starting list making process now! ########
+##################################################
+###### Familiarization list is done. #######
+###### 2AFC Pic (multiple choice) list is done. #######
+###### Picture naming lists for learning session are done. #######
+###### Stem completion list for learning session is done. #######
+###### Posttest list for learning phase is done. #######
+###### ALL LISTS FOR LEARNING SESSION HAVE BEEN SUCCESSFULLY CREATED. #######
+###### Final test list is done. #######
+##############################################################
+######### SUCCESS: ALL LISTS HAVE BEEN CREATED! ##########
+##############################################################
+###### Close Matlab now, lists have been saved already. #######
+##############################################################
+MakeLists(602)

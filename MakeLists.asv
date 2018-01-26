@@ -48,8 +48,9 @@ labeleng = 1; % which column contains the English label
 stemspa = 15; % column containing the spanish stem
 condinf = 26; % column containing condition information 
 syllspa = 25; % column containing syllable count in Spanish 
-sylleng = 24; 
-freq = 23; 
+sylleng = 24; % column containing syllable length in English
+freq = 19; % column containing frequency information
+fileloc = 'U:\PhD\EXPERIMENT 3 -Honours\Script\ExampleOutput\'; % folder for output files 
 
 %% load files 
 fid = fopen('pNumbers.txt');
@@ -559,7 +560,15 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                         index5 = words2(index1); 
                         distval = min(Spalevdislongnum(index5,3)) > 2;
                         
-                        if val == 1 && distval == 1 % yay, it can be used as an item, remove it from list of possible items for the next round 
+                        words = find(ismember(wordsSim, final(:,1)));
+                        words2 = find(Englevdislongnum(:,1) == wordrepla);
+                            for i = 1:length(words)
+                               index1(i) = find(Englevdislongnum(words2,2) == words(i));
+                            end
+                        index5 = words2(index1); 
+                        distval2 = min(Englevdislongnum(index5,3)) > 2;
+                        
+                        if val == 1 && distval == 1 && distval2 == 1 % yay, it can be used as an item, remove it from list of possible items for the next round 
                            nr = length(final(:,1)) + 1;
                            final = [final;  matrix(item,:)];
                            final(nr,condinf) = finalknown(m,condinf);
@@ -570,7 +579,7 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                            finalrepcomp(tobedel3,:) = [];
                            tobedel5 = find(strcmp(finalrep(:,1), wordsSim(wordrepla)));
                            finalrep(tobedel5,:) = [];
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang interference listnr listmode nr wordsSim2 wordrepla LabelMaster pNumber similaritymatrixorig Label Answers item simrepallnum simrepall finalrep matrix value final finalknown simunkallnoncompnum finalrep rest similaritymatrix finalrepnoncomp simlongmat finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang interference listnr listmode nr wordsSim2 wordrepla LabelMaster pNumber similaritymatrixorig Label Answers item simrepallnum simrepall finalrep matrix value final finalknown simunkallnoncompnum finalrep rest similaritymatrix finalrepnoncomp simlongmat finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                            
 
                         else % do not add it but delete it for the next round
@@ -579,7 +588,7 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                            finalrepcomp(tobedel3,:) = [];
                            tobedel5 = find(strcmp(finalrep(:,1), wordsSim(wordrepla)));
                            finalrep(tobedel5,:) = [];
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang interference listnr listmode nr item wordrepla wordsSim2 pNumber similaritymatrixorig LabelMaster Answers Label simrepallnum simrepall matrix finalrep value final finalknown simunkallnoncompnum finalrep rest similaritymatrix finalrepnoncomp simlongmat finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang interference listnr listmode nr item wordrepla wordsSim2 pNumber similaritymatrixorig LabelMaster Answers Label simrepallnum simrepall matrix finalrep value final finalknown simunkallnoncompnum finalrep rest similaritymatrix finalrepnoncomp simlongmat finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                         end   
 
 
@@ -594,14 +603,20 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                         end
 
                         Cond1 = final(condition1,1);
-                        Condition1 = final(condition1,syllspa);
-                        Condition1 = cell2mat(Condition1);
                         Cond1Ind = find(ismember(similaritymatrix(:,1),Cond1));
-                        
                         Cond1Indc = find(ismember(similaritymatrix(Cond1Ind,2),Cond1));
                         neuerversuch = similaritymatrix(Cond1Ind,:);
                         Cond1Indd = neuerversuch(Cond1Indc,:);
                         Cond1SimsFin = cell2mat(Cond1Indd(:,3)); 
+                        
+                        Condition1 = final(condition1,syllspa);
+                        Condition1 = cell2mat(Condition1);
+                        
+                        Cond1seng = final(condition1,sylleng);
+                        Cond1seng = cell2mat(Cond1seng);
+                        
+                        Cond1freq = final(condition1,freq);
+                        Cond1freq = cell2mat(Cond1freq);
 
                         counter = 0;
                         for i = 1:length(final(:,1))
@@ -613,21 +628,28 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                         end 
 
                         Cond2 = final(condition2, 1);
-                        Condition2 = final(condition2,syllspa);
-                        Condition2 = cell2mat(Condition2);
                         Cond2Ind = find(ismember(similaritymatrix(:,1),Cond2));
- 
                         Cond2Indc = find(ismember(similaritymatrix(Cond2Ind,2),Cond2));
                         neuerversuch2 = similaritymatrix(Cond2Ind,:);
                         Cond2Indd = neuerversuch2(Cond2Indc,:);
-                        Cond2SimsFin = cell2mat(Cond2Indd(:,3));         
+                        Cond2SimsFin = cell2mat(Cond2Indd(:,3));
+                        
+                        Condition2 = final(condition2,syllspa);
+                        Condition2 = cell2mat(Condition2);
+                        
+                        Cond2seng = final(condition2,sylleng);
+                        Cond2seng = cell2mat(Cond2seng);
+                        
+                        Cond2freq = final(condition2,freq);
+                        Cond2freq = cell2mat(Cond2freq);
 
                         [hval,p] = ttest2(Cond1SimsFin,Cond2SimsFin);
-                        
                         [valuelength,p2] = ttest2(Condition1,Condition2);
+                        [freqval,p3] = ttest2(Cond1freq,Cond2freq);
+                        [syllengval,p4] = ttest2(Cond1seng,Cond2seng);
                        
 
-                        if hval == 0 && val == 1 && valuelength == 0 && distval == 1
+                        if hval == 0 && val == 1 && valuelength == 0 && distval == 1 && freqval == 0 && syllengval == 0
                             tind = find(strcmp(Label(:),  matrix(item,1)));
                             Answers{tind} = '0';
                             word = wordsSim(wordrepla);
@@ -637,22 +659,26 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                             disp(['####### GOOD NEWS: item ', num2str(m), ' out of ',  num2str(rest), ' has been replaced. #######']);
                             disp(['##############################################################']);
                             %leave the item in and exit 
-                            clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                             break; 
                         elseif  hval == 1 && val == 1 && valuelength == 1 && distval == 1
                            final(nr,:) = [];
                            disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: too high average similarity and unequal word length. #######']);
-                            clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                         elseif  valuelength == 1 && val == 1 && hval == 0 && distval == 1
                            final(nr,:) = [];
                            disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: unequal word length. #######']);
-                           clearvars -except  items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                         elseif  valuelength == 0 && val == 1 && hval == 1 && distval == 1
                            final(nr,:) = [];
                            disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: too high average similarity. #######']);
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                         elseif  freqval == 1
+                           final(nr,:) = [];
+                           disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: Frequencies not matched between conditions. #######']);
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                         else
-                            clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                         end
 
                         if length(final) == items
@@ -751,7 +777,15 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                         index5 = words2(index1); 
                         distval = min(Spalevdislongnum(index5,3)) > 2;
                         
-                        if val == 1 && distval == 1% yay, it can be used as an item, remove it from list of possible items for the next round
+                        words = find(ismember(wordsSim, final(:,1)));
+                        words2 = find(Englevdislongnum(:,1) == wordrepla);
+                            for i = 1:length(words)
+                               index1(i) = find(Englevdislongnum(words2,2) == words(i));
+                            end
+                        index5 = words2(index1); 
+                        distval2 = min(Englevdislongnum(index5,3)) > 2;
+                        
+                        if val == 1 && distval == 1 && distval2 == 1 % yay, it can be used as an item, remove it from list of possible items for the next round
                            disp(['####### A possible replacement for item ', num2str(m), ' out of ',  num2str(rest), ' has been found. #######']);
                            % delete all rows that contain wordrepla in the 2nd
                            % colummn
@@ -762,7 +796,7 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                            finalrep(tobedel5,:) = [];
                            tobedel3 = find(strcmp(finalrepnoncomp(:,1), wordsSim(wordrepla)));
                            finalrepnoncomp(tobedel3,:) = [];
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang nr interference listnr listmode item wordrepla Answers pNumber similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum finalrepcomp rest similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang nr interference listnr listmode item wordrepla Answers pNumber similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum finalrepcomp rest similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
 
                         else % do not add it but also delete it for the next round
                            disp(['####### No item found for replacement this round. #######']);
@@ -770,7 +804,7 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                            finalrepnoncomp(tobedel3,:) = [];
                            tobedel5 = find(strcmp(finalrep(:,1), wordsSim(wordrepla)));
                            finalrep(tobedel5,:) = [];
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum distval levdislongnum val m lang nr interference listnr listmode item wordrepla Answers pNumber similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum rest finalrepcomp similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum distval levdislongnum val m lang nr interference listnr listmode item wordrepla Answers pNumber similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum rest finalrepcomp similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                         end   
 
                         % get the simlarity values of all items with each other in condition 1 into a long matrix 
@@ -792,6 +826,13 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                         neuerversuch = similaritymatrix(Cond1Ind,:);
                         Cond1Indd = neuerversuch(Cond1Indc,:);
                         Cond1SimsFin = cell2mat(Cond1Indd(:,3)); 
+                        
+                        Cond1seng = final(condition1,sylleng);
+                        Cond1seng = cell2mat(Cond1seng);
+                        
+                        Cond1freq = final(condition1,freq);
+                        Cond1freq = cell2mat(Cond1freq);
+
 
                         counter = 0;
                         for i = 1:length(final(:,1))
@@ -811,11 +852,20 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                         neuerversuch2 = similaritymatrix(Cond2Ind,:);
                         Cond2Indd = neuerversuch2(Cond2Indc,:);
                         Cond2SimsFin = cell2mat(Cond2Indd(:,3)); 
+                        
+                        Cond2seng = final(condition2,sylleng);
+                        Cond2seng = cell2mat(Cond2seng);
+                        
+                        Cond2freq = final(condition2,freq);
+                        Cond2freq = cell2mat(Cond2freq);
+
 
                         [hval,p] = ttest2(Cond1SimsFin,Cond2SimsFin);
                         [valuelength,p2] = ttest2(Condition1,Condition2);
+                        [freqval,p3] = ttest2(Cond1freq,Cond2freq);
+                        [syllengval,p4] = ttest2(Cond1seng,Cond2seng);
 
-                        if hval == 0 && val == 1 && valuelength == 0 && distval == 1 && distval == 1
+                        if hval == 0 && val == 1 && valuelength == 0 && distval == 1 && distval == 1 && syllengval == 0 && freqval == 0
                             tind = find(strcmp(Label(:),  matrix(item,1)));
                             Answers{tind} = '0';
                             word = wordsSim(wordrepla);
@@ -824,22 +874,27 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                             disp(['##############################################################']);
                             disp(['####### GOOD NEWS: item ', num2str(m), ' out of ',  num2str(rest), ' has been replaced. #######']);
                             disp(['##############################################################']);
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                             break;
                         elseif  hval == 1 && val == 1 && valuelength == 1 && distval == 1
                            final(nr,:) = [];
                            disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: too high average similarity and unequal word length. #######']);
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                        elseif  hval == 1 && val == 1 && valuelength == 0 && distval == 1
                            final(nr,:) = [];
                            disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: too high average similarity. #######']);
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                        elseif  hval == 0 && val == 1 && valuelength == 1 && distval == 1
                            final(nr,:) = [];
                            disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: unequal word length. #######']);
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                        elseif  freqval == 1 
+                           final(nr,:) = [];
+                           disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: frequency not matched. #######']);
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+
                         else
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                         end
                         
                         if length(final) == items
@@ -938,6 +993,14 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                         index5 = words2(index1); 
                         distval = min(Spalevdislongnum(index5,3)) > 2;
                         
+                        words = find(ismember(wordsSim, final(:,1)));
+                        words2 = find(Englevdislongnum(:,1) == wordrepla);
+                            for i = 1:length(words)
+                               index1(i) = find(Englevdislongnum(words2,2) == words(i));
+                            end
+                        index5 = words2(index1); 
+                        distval2 = min(Englevdislongnum(index5,3)) > 2;
+                        
                         if val == 1 && distval ==1 % yay, it can be used as an item, remove it from list of possible items for the next round 
                            nr = length(final(:,1)) + 1;
                            final = [final;  matrix(item,:)];
@@ -949,7 +1012,7 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                            finalrepnoncomp(tobedel3,:) = [];
                            tobedel5 = find(strcmp(finalrep(:,1), wordsSim(wordrepla)));
                            finalrep(tobedel5,:) = [];
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum distval val levdislongnum lang interference m listnr listmode nr item wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum finalrepcomp rest similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum distval val levdislongnum lang interference m listnr listmode nr item wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum finalrepcomp rest similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
 
                         else % do not add it but also delete it for the next round
                            disp(['####### No item found for replacement this round. #######']);
@@ -958,7 +1021,7 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                            tobedel5 = find(strcmp(finalrep(:,1), wordsSim(wordrepla)));
                            finalrep(tobedel5,:) = [];
                   
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum distval val levdislongnum lang interference m listnr listmode nr item wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum rest finalrepcomp similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum distval val levdislongnum lang interference m listnr listmode nr item wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum rest finalrepcomp similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                         end   
 
 
@@ -981,6 +1044,12 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                         neuerversuch = similaritymatrix(Cond1Ind,:);
                         Cond1Indd = neuerversuch(Cond1Indc,:);
                         Cond1SimsFin = cell2mat(Cond1Indd(:,3));
+                        
+                        Cond1seng = final(condition1,sylleng);
+                        Cond1seng = cell2mat(Cond1seng);
+                        
+                        Cond1freq = final(condition1,freq);
+                        Cond1freq = cell2mat(Cond1freq);
 
                         counter = 0;
                         for i = 1:length(final(:,1))
@@ -1000,11 +1069,20 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                         neuerversuch2 = similaritymatrix(Cond2Ind,:);
                         Cond2Indd = neuerversuch2(Cond2Indc,:);
                         Cond2SimsFin = cell2mat(Cond2Indd(:,3)); 
+                        
+                        Cond2seng = final(condition2,sylleng);
+                        Cond2seng = cell2mat(Cond2seng);
+                        
+                        Cond2freq = final(condition2,freq);
+                        Cond2freq = cell2mat(Cond2freq);
                      
                         [hval,p] = ttest2(Cond1SimsFin,Cond2SimsFin);
                         [valuelength,p2] = ttest2(Condition1,Condition2);
+                        [freqval,p3] = ttest2(Cond1freq,Cond2freq);
+                        [syllengval,p4] = ttest2(Cond1seng,Cond2seng);
 
-                        if hval == 0 && val == 1 && valuelength == 0 && distval == 1
+
+                        if hval == 0 && val == 1 && valuelength == 0 && distval == 1 && freqval ==0 && syllengval == 0
                             tind = find(strcmp(Label(:), matrix(item,1)));
                             Answers{tind} = '0';
                             word = wordsSim(wordrepla);
@@ -1013,22 +1091,27 @@ elseif nnz(strcmp(Answers(1:items),'1')) < items
                             disp(['##############################################################']);
                             disp(['####### GOOD NEWS: item ', num2str(m), ' out of ',  num2str(rest), ' has been replaced. #######']);
                             disp(['##############################################################']);
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq m Spalevdislongnum levdislongnum lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq m Spalevdislongnum levdislongnum lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                             break;
                         elseif  hval == 1 && val == 1 && valuelength == 1 && distval == 1
                             final(nr,:) = [];
                             disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: too high average similarity and unequal word length. #######']);
-                            clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final  simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final  simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                         elseif  hval == 1 && val == 1 && valuelength == 0 && distval == 1
                             final(nr,:) = [];
                             disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: too high average similarity. #######']);
-                            clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final  simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final  simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                         elseif  hval == 0 && val == 1 && valuelength == 1 && distval == 1
                             final(nr,:) = [];
                             disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: unequal word length. #######']);
-                            clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final  simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final  simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                        elseif  freqval == 1
+                            final(nr,:) = [];
+                            disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: frequencies not matched. #######']);
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final  simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+
                         else
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                         end
                         
                         if length(final) == items
@@ -1514,7 +1597,7 @@ if failed == 1
                            finalrepcomp(tobedel3,:) = [];
                            tobedel5 = find(strcmp(finalrep(:,1), wordsSim(wordrepla)));
                            finalrep(tobedel5,:) = [];
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang interference listnr listmode nr wordsSim2 wordrepla LabelMaster pNumber similaritymatrixorig Label Answers item simrepallnum simrepall finalrep matrix value final finalknown simunkallnoncompnum finalrep rest similaritymatrix finalrepnoncomp simlongmat finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang interference listnr listmode nr wordsSim2 wordrepla LabelMaster pNumber similaritymatrixorig Label Answers item simrepallnum simrepall finalrep matrix value final finalknown simunkallnoncompnum finalrep rest similaritymatrix finalrepnoncomp simlongmat finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                            
 
                         else % do not add it but delete it for the next round
@@ -1523,7 +1606,7 @@ if failed == 1
                            finalrepcomp(tobedel3,:) = [];
                            tobedel5 = find(strcmp(finalrep(:,1), wordsSim(wordrepla)));
                            finalrep(tobedel5,:) = [];
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang interference listnr listmode nr item wordrepla wordsSim2 pNumber similaritymatrixorig LabelMaster Answers Label simrepallnum simrepall matrix finalrep value final finalknown simunkallnoncompnum finalrep rest similaritymatrix finalrepnoncomp simlongmat finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang interference listnr listmode nr item wordrepla wordsSim2 pNumber similaritymatrixorig LabelMaster Answers Label simrepallnum simrepall matrix finalrep value final finalknown simunkallnoncompnum finalrep rest similaritymatrix finalrepnoncomp simlongmat finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                         end   
 
 
@@ -1546,6 +1629,12 @@ if failed == 1
                         neuerversuch = similaritymatrix(Cond1Ind,:);
                         Cond1Indd = neuerversuch(Cond1Indc,:);
                         Cond1SimsFin = cell2mat(Cond1Indd(:,3)); 
+                        
+                        Cond1seng = final(condition1,sylleng);
+                        Cond1seng = cell2mat(Cond1seng);
+                        
+                        Cond1freq = final(condition1,freq);
+                        Cond1freq = cell2mat(Cond1freq);
 
                         counter = 0;
                         for i = 1:length(final(:,1))
@@ -1564,14 +1653,21 @@ if failed == 1
                         Cond2Indc = find(ismember(similaritymatrix(Cond2Ind,2),Cond2));
                         neuerversuch2 = similaritymatrix(Cond2Ind,:);
                         Cond2Indd = neuerversuch2(Cond2Indc,:);
-                        Cond2SimsFin = cell2mat(Cond2Indd(:,3));         
+                        Cond2SimsFin = cell2mat(Cond2Indd(:,3));   
+                        
+                        Cond2seng = final(condition2,sylleng);
+                        Cond2seng = cell2mat(Cond2seng);
+                        
+                        Cond2freq = final(condition2,freq);
+                        Cond2freq = cell2mat(Cond2freq);
 
                         [hval,p] = ttest2(Cond1SimsFin,Cond2SimsFin);
-                        
                         [valuelength,p2] = ttest2(Condition1,Condition2);
+                        [freqval,p3] = ttest2(Cond1freq,Cond2freq);
+                        [syllengval,p4] = ttest2(Cond1seng,Cond2seng);
                        
 
-                        if val == 1 && valuelength == 0 && distval == 1
+                        if val == 1 && valuelength == 0 && distval == 1 && freqval == 0 && syllengval == 0
                             tind = find(strcmp(Label(:),  matrix(item,1)));
                             Answers{tind} = '0';
                             word = wordsSim(wordrepla);
@@ -1581,14 +1677,19 @@ if failed == 1
                             disp(['####### GOOD NEWS: item ', num2str(m), ' out of ',  num2str(rest), ' has been replaced. #######']);
                             disp(['#############################################################']);
                             %leave the item in and exit 
-                            clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                             break; 
                         elseif  val == 1 && valuelength == 1 && distval == 1
                            final(nr,:) = [];
                            disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: unequal word length. #######']);
-                            clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
-                         else
-                            clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+                        elseif  freqval == 1 
+                           final(nr,:) = [];
+                           disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: frequencies not matched. #######']);
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
+ 
+                        else
+                            clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig LabelMaster wordsSim2 Label simrepallnum simrepall finalrep final finalknown finalrep rest simunkallnoncompnum similaritymatrix simlongmat finalrepnoncomp finalrepcomp simunkallcompnum wordsSim simlongmatNODEL;
                         end
 
                         if length(final) == items
@@ -1698,7 +1799,7 @@ if failed == 1
                            finalrep(tobedel5,:) = [];
                            tobedel3 = find(strcmp(finalrepnoncomp(:,1), wordsSim(wordrepla)));
                            finalrepnoncomp(tobedel3,:) = [];
-                           clearvars -except items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang nr interference listnr listmode item wordrepla Answers pNumber similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum finalrepcomp rest similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang nr interference listnr listmode item wordrepla Answers pNumber similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum finalrepcomp rest similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
 
                         else % do not add it but also delete it for the next round
                            disp(['####### No item found for replacement this round. #######']);
@@ -1706,7 +1807,7 @@ if failed == 1
                            finalrepnoncomp(tobedel3,:) = [];
                            tobedel5 = find(strcmp(finalrep(:,1), wordsSim(wordrepla)));
                            finalrep(tobedel5,:) = [];
-                           clearvars -except Spalevdislongnum distval levdislongnum val m lang nr interference listnr listmode item wordrepla Answers pNumber similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum rest finalrepcomp similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  Spalevdislongnum distval levdislongnum val m lang nr interference listnr listmode item wordrepla Answers pNumber similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum rest finalrepcomp similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                         end   
 
                         % get the simlarity values of all items with each other in condition 1 into a long matrix 
@@ -1728,6 +1829,12 @@ if failed == 1
                         neuerversuch = similaritymatrix(Cond1Ind,:);
                         Cond1Indd = neuerversuch(Cond1Indc,:);
                         Cond1SimsFin = cell2mat(Cond1Indd(:,3)); 
+                        
+                        Cond1seng = final(condition1,sylleng);
+                        Cond1seng = cell2mat(Cond1seng);
+                        
+                        Cond1freq = final(condition1,freq);
+                        Cond1freq = cell2mat(Cond1freq);
 
                         counter = 0;
                         for i = 1:length(final(:,1))
@@ -1747,11 +1854,19 @@ if failed == 1
                         neuerversuch2 = similaritymatrix(Cond2Ind,:);
                         Cond2Indd = neuerversuch2(Cond2Indc,:);
                         Cond2SimsFin = cell2mat(Cond2Indd(:,3)); 
+                        
+                        Cond2seng = final(condition2,sylleng);
+                        Cond2seng = cell2mat(Cond2seng);
+                        
+                        Cond2freq = final(condition2,freq);
+                        Cond2freq = cell2mat(Cond2freq);
 
                         [hval,p] = ttest2(Cond1SimsFin,Cond2SimsFin);
                         [valuelength,p2] = ttest2(Condition1,Condition2);
+                        [freqval,p3] = ttest2(Cond1freq,Cond2freq);
+                        [syllengval,p4] = ttest2(Cond1seng,Cond2seng);
 
-                        if val == 1 && valuelength == 0 && distval == 1
+                        if val == 1 && valuelength == 0 && distval == 1 && freqval == 0 && syllengval == 0 
                             tind = find(strcmp(Label(:),  matrix(item,1)));
                             Answers{tind} = '0';
                             word = wordsSim(wordrepla);
@@ -1760,14 +1875,19 @@ if failed == 1
                             disp(['#############################################################']);
                             disp(['####### GOOD NEWS: item ', num2str(m), ' out of ',  num2str(rest), ' has been replaced. #######']);
                             disp(['#############################################################']);
-                           clearvars -except Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                             break;
                         elseif  val == 1 && valuelength == 1 && distval == 1
                            final(nr,:) = [];
                            disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: unequal word length. #######']);
-                           clearvars -except Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                        elseif  freqval == 1
+                           final(nr,:) = [];
+                           disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: frequencies not matched. #######']);
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+
                         else
-                           clearvars -except Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                         end
                         
                         if length(final) == items
@@ -1877,7 +1997,7 @@ if failed == 1
                            finalrepnoncomp(tobedel3,:) = [];
                            tobedel5 = find(strcmp(finalrep(:,1), wordsSim(wordrepla)));
                            finalrep(tobedel5,:) = [];
-                           clearvars -except Spalevdislongnum distval val levdislongnum lang interference m listnr listmode nr item wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum finalrepcomp rest similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum distval val levdislongnum lang interference m listnr listmode nr item wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum finalrepcomp rest similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
 
                         else % do not add it but delete it for the next round
                            disp(['####### No item found for replacement this round. #######']);
@@ -1886,7 +2006,7 @@ if failed == 1
                            tobedel5 = find(strcmp(finalrep(:,1), wordsSim(wordrepla)));
                            finalrep(tobedel5,:) = [];
                   
-                           clearvars -except Spalevdislongnum distval val levdislongnum lang interference m listnr listmode nr item wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum rest finalrepcomp similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum distval val levdislongnum lang interference m listnr listmode nr item wordrepla pNumber Answers similaritymatrixorig wordsSim2 LabelMaster Label simrepallnum matrix simrepall finalrep value final finalknown finalrepnoncomp simunkallcompnum rest finalrepcomp similaritymatrix simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                         end   
 
 
@@ -1909,6 +2029,12 @@ if failed == 1
                         neuerversuch = similaritymatrix(Cond1Ind,:);
                         Cond1Indd = neuerversuch(Cond1Indc,:);
                         Cond1SimsFin = cell2mat(Cond1Indd(:,3));
+                        
+                        Cond1seng = final(condition1,sylleng);
+                        Cond1seng = cell2mat(Cond1seng);
+                        
+                        Cond1freq = final(condition1,freq);
+                        Cond1freq = cell2mat(Cond1freq);
 
                         counter = 0;
                         for i = 1:length(final(:,1))
@@ -1928,11 +2054,19 @@ if failed == 1
                         neuerversuch2 = similaritymatrix(Cond2Ind,:);
                         Cond2Indd = neuerversuch2(Cond2Indc,:);
                         Cond2SimsFin = cell2mat(Cond2Indd(:,3)); 
+                        
+                        Cond2seng = final(condition2,sylleng);
+                        Cond2seng = cell2mat(Cond2seng);
+                        
+                        Cond2freq = final(condition2,freq);
+                        Cond2freq = cell2mat(Cond2freq);
                      
                         [hval,p] = ttest2(Cond1SimsFin,Cond2SimsFin);
                         [valuelength,p2] = ttest2(Condition1,Condition2);
+                        [freqval,p3] = ttest2(Cond1freq,Cond2freq);
+                        [syllengval,p4] = ttest2(Cond1seng,Cond2seng);
 
-                        if val == 1 && valuelength == 0 && distval == 1
+                        if val == 1 && valuelength == 0 && distval == 1 && freqval == 0 && syllengval == 0 
                             tind = find(strcmp(Label(:), matrix(item,1)));
                             Answers{tind} = '0';
                             word = wordsSim(wordrepla);
@@ -1941,14 +2075,19 @@ if failed == 1
                             disp(['#############################################################']);
                             disp(['####### GOOD NEWS: item ', num2str(m), ' out of ',  num2str(rest), ' has been replaced. #######']);
                             disp(['#############################################################']);
-                           clearvars -except m Spalevdislongnum levdislongnum lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq  m Spalevdislongnum levdislongnum lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                             break;
                         elseif  val == 1 && valuelength == 1 && distval == 1
                             final(nr,:) = [];
                             disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: unequal word length. #######']);
-                            clearvars -except Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final  simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                            clearvars -except  fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final  simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                       elseif  freqval == 1
+                            final(nr,:) = [];
+                            disp(['####### Unfortunately, item ', num2str(m), ' out of ',  num2str(rest), ' cannot be used: frequencies not matched. #######']);
+                            clearvars -except  fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final  simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+
                         else
-                           clearvars -except Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
+                           clearvars -except fileloc items compeng compnl maxcol pic audio labelspa labelnl labeleng stemspa condinf syllspa sylleng freq Spalevdislongnum levdislongnum m lang interference listnr listmode matrix wordrepla pNumber similaritymatrixorig Answers wordsSim2 LabelMaster Label simrepallnum final simrepall finalrep finalknown finalrepnoncomp rest simunkallcompnum similaritymatrix finalrepcomp simlongmat simunkallnoncompnum wordsSim simlongmatNODEL;
                         end
                         
                         if length(final) == items
@@ -2026,7 +2165,7 @@ end
 
          A = {'Block','Item', 'Span_Label', 'Picture', 'Audio_Spanish', 'Condition'};
 
-         filenameSPL = strcat('U:\PhD\OP3_2017\Script\SPF_list_pp_', int2str(pNumber), '.txt');
+         filenameSPL = strcat(fileloc, 'SPF_list_pp_', int2str(pNumber), '.txt');
          fileID = fopen(filenameSPL,'a');
               for i=1:length(A)
                   fprintf(fileID, '%s\t', A{i});
@@ -2084,9 +2223,10 @@ end
                  k = k+1;
               end
 
-          respcode = [answermat1.x(1:(items/2)); answermat2.x(1:(items/2))];
+          respcode = [answermat1.x(1:(items/2)), answermat2.x(1:(items/2))];
           respcode(respcode==0)=2;
           resp = num2cell(respcode);
+          
           Block1 = ones((items/2),1);
           Block2 = ones((items/2),1)*2;
           Block = [Block1; Block2];
@@ -2097,7 +2237,7 @@ end
 
           A = {'Item', 'Picture', 'Audio_Spanish', 'Label1', 'Label2', 'RespCode', 'Condition', 'Block'};
 
-          filenameWordAFC = strcat('U:\PhD\OP3_2017\Script\2AFCPic_list_pp_', int2str(pNumber), '.txt');
+          filenameWordAFC = strcat(fileloc, '2AFCPic_list_pp_', int2str(pNumber), '.txt');
           fileID = fopen(filenameWordAFC,'a');
           for i=1:length(A)
               fprintf(fileID, '%s\t', A{i});
@@ -2135,7 +2275,7 @@ end
 
           A = {'Block','Item', 'Span_Label', 'Picture', 'Audio_Spanish', 'Condition'};
 
-          filenamePN = strcat('U:\PhD\OP3_2017\Script\PicNaming_list_A_pp_', int2str(pNumber), '.txt');
+          filenamePN = strcat(fileloc, 'PicNaming_list_A_pp_', int2str(pNumber), '.txt');
           fileID = fopen(filenamePN,'a');
           for i=1:length(A)
               fprintf(fileID, '%s\t', A{i});
@@ -2148,7 +2288,7 @@ end
             fprintf(fileID,formatSpec,PicNaming_final{row,:});
           end
           
-          filenamePN = strcat('U:\PhD\OP3_2017\Script\PicNaming_list_B_pp_', int2str(pNumber), '.txt');
+          filenamePN = strcat(fileloc, 'PicNaming_list_B_pp_', int2str(pNumber), '.txt');
           fileID = fopen(filenamePN,'a');
           for i=1:length(A)
               fprintf(fileID, '%s\t', A{i});
@@ -2186,7 +2326,7 @@ end
 
           A = {'Block', 'Item', 'Span_Label', 'Picture', 'Audio_Spanish', 'Condition', 'Stem'};
 
-          filenameSPL = strcat('U:\PhD\OP3_2017\Script\StemComp_list_pp_', int2str(pNumber), '.txt');
+          filenameSPL = strcat(fileloc, 'StemComp_list_pp_', int2str(pNumber), '.txt');
           fileID = fopen(filenameSPL,'a');
           for i=1:length(A)
               fprintf(fileID, '%s\t', A{i});
@@ -2210,7 +2350,7 @@ end
           Posttest_final = [Posttest_fin];
           A = {'Item', 'Span_Label', 'Picture', 'Condition'};
 
-          filenameSPL = strcat('U:\PhD\OP3_2017\Script\Posttest_list_pp_', int2str(pNumber), '.txt');
+          filenameSPL = strcat(fileloc, 'Posttest_list_pp_', int2str(pNumber), '.txt');
           fileID = fopen(filenameSPL,'a');
           for i=1:length(A)
               fprintf(fileID, '%s\t', A{i});
@@ -2234,7 +2374,7 @@ end
 
           A = {'Item','Label', 'Picture', 'Condition'};
 
-          filenameSPL = strcat('E:\Mickan\4 - FINAL_TEST\FinalTest_list_pp_', int2str(pNumber), '.txt');
+          filenameSPL = strcat(fileloc, 'FinalTest_list_pp_', int2str(pNumber), '.txt');
           fileID = fopen(filenameSPL,'a');
           for i=1:length(A)
               fprintf(fileID, '%s\t', A{i});
