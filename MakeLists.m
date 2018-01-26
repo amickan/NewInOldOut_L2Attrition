@@ -23,6 +23,7 @@ else
     interference = 2;
 end
 
+% check whether PP number is within the required range
 if (pNumber < 601 || pNumber > 635)
     error('ERROR: wrong participant number: needs to be between 601 and 635.');
 else
@@ -57,6 +58,7 @@ fid = fopen('pNumbers.txt');
 C = textscan(fid, '%d');
 pNumbersPrevious = C{1};
 
+% check whether PP number has been used before or not
 if ismember(pNumber, pNumbersPrevious)== 1 
     error('ERROR: This participants number has been used already. Use a different number!');
 else
@@ -107,6 +109,7 @@ A = '___';
 underscores = repmat(A,items, 1);
 underscores2 = cellstr(underscores);
 
+% Check whether the default list can be used (i.e. whether the first 43 items are known)
 if nnz(strcmp(Answers(1:items),'1')) >= items;
     disp('################################################');
     disp('###### Default stmulus list can be used #######');
