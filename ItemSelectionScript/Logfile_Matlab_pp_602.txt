@@ -194,3 +194,95 @@ Interference condition: 1
 ##############################################################
 ###### Close Matlab now, lists have been saved already. #######
 ##############################################################
+#####################################################################
+################# LIST CREATION SCRIPT FOR HONOURS PROJECT ##############
+#####################################################################
+Participant number: 602
+Interference condition: 1
+###########################################################################################
+####### START REPLACEMENT: 7 items were unknown in English and need to be replaced. ########
+###########################################################################################
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 1 out of 7 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 2 out of 7 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 3 out of 7 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 4 out of 7 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 5 out of 7 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 6 out of 7 has been replaced. #######
+##############################################################
+####### No item found for replacement this round. #######
+##############################################################
+####### GOOD NEWS: item 7 out of 7 has been replaced. #######
+##############################################################
+###################################################################
+####### PROBLEM: Replacement process could not be finished. ########
+####################################################################
+### Trying replacement with more lenient criteria now. ###
+####### A possible replacement for item 1 out of 7 has been found. #######
+#############################################################
+####### GOOD NEWS: item 1 out of 7 has been replaced. #######
+#############################################################
+####### A possible replacement for item 2 out of 7 has been found. #######
+#############################################################
+####### GOOD NEWS: item 2 out of 7 has been replaced. #######
+#############################################################
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+####### No item found for replacement this round. #######
+####### A possible replacement for item 3 out of 7 has been found. #######
+#############################################################
+####### GOOD NEWS: item 3 out of 7 has been replaced. #######
+#############################################################
+####### A possible replacement for item 4 out of 7 has been found. #######
+#############################################################
+####### GOOD NEWS: item 4 out of 7 has been replaced. #######
+#############################################################
+####### A possible replacement for item 5 out of 7 has been found. #######
+#############################################################
+####### GOOD NEWS: item 5 out of 7 has been replaced. #######
+#############################################################
+####### No item found for replacement this round. #######
+####### A possible replacement for item 6 out of 7 has been found. #######
+#############################################################
+####### GOOD NEWS: item 6 out of 7 has been replaced. #######
+#############################################################
+####### A possible replacement for item 7 out of 7 has been found. #######
+#############################################################
+####### GOOD NEWS: item 7 out of 7 has been replaced. #######
+#############################################################
+###########################################################
+####### All items have been successfully replaced! ########
+###########################################################
+##################################################
+####### Starting list making process now! ########
+##################################################
+###### Familiarization list is done. #######
+###### 2AFC Pic (multiple choice) list is done. #######
+###### Picture naming lists for learning session are done. #######
+###### Stem completion list for learning session is done. #######
+###### Posttest list for learning phase is done. #######
+###### ALL LISTS FOR LEARNING SESSION HAVE BEEN SUCCESSFULLY CREATED. #######
+###### Final test list is done. #######
+##############################################################
+######### SUCCESS: ALL LISTS HAVE BEEN CREATED! ##########
+##############################################################
+###### Close Matlab now, lists have been saved already. #######
+##############################################################
