@@ -1,0 +1,6 @@
+PP	Word
+602	ajo
+614	perro
+614	ajo
+615	toro
+624	ajo
