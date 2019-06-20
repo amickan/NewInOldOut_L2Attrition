@@ -5,8 +5,6 @@ require(here)
 
 A = c(601:603, 608, 610:620, 622, 623, 625:631)
 post <- read.table(here("CompleteDataset_Honours.txt"), header = T)
-post<-post[!(post$Subject_nr == 604 | post$Subject_nr == 624),]
-post <- droplevels(post)
 
 # setting variables
 post$Subject_nr <- as.factor(post$Subject_nr)
@@ -33,6 +31,7 @@ table(post$Subject_nr, post$ArticlesPre) # Pps 604, 618, 624 and 630 used a lot 
 #post<-post[!(post$Subject_nr== 604 | post$Subject_nr == 618 | post$Subject_nr == 624 | post$Subject_nr == 630),]
 #post <- droplevels(post)
 
+beforeexcl <- table(post[is.na(post$RTdiff)==0,]$Subject_nr, post[is.na(post$RTdiff)==0,]$Condition) # per condition
 # exclude trials in which articles were used from RT analysis 
 for (i in 1:nrow(post)){
   if (is.na(post$ArticlesPost[i]) == 0 && is.na(post$ArticlesPre[i]) == 0){
@@ -46,15 +45,18 @@ for (i in 1:nrow(post)){
     post$RTdifflog[i] <- NA
   } 
 }
+
 # check how many trials per person we have left
 table(post[is.na(post$RTdiff)==0,]$Subject_nr)
-table(post[is.na(post$RTdiff)==0,]$Subject_nr, post[is.na(post$RTdiff)==0,]$Condition) # per condition
+afterexcl <- table(post[is.na(post$RTdiff)==0,]$Subject_nr, post[is.na(post$RTdiff)==0,]$Condition) # per condition
+rtexcl <- beforeexcl-afterexcl
+perc <- (rtexcl/23)*100
+avepercexcl <- (perc[,1]+perc[,2])/2
 
 # percentage of article traisl per person per condition
 article <- post[(is.na(post$ArticlesPre)==0 | is.na(post$ArticlesPost)==0),]
 article1 <- (table(article$Subject_nr, article$Condition)/23)*100
 article2 <- (table(article$Subject_nr)/46)*100
-
 
 ### deleting trials of words that were already known in Spanish before the learning phaser
 known <- read.delim("KnownWords.txt")
@@ -71,6 +73,9 @@ for (i in 1:nrow(known)){
     post[post$Subject_nr == pNumber,]$Error[num] <- NA
   }
 }
+
+postrt<-post[!(post$Subject_nr == 604 | post$Subject_nr == 624 | post$Subject_nr == 630),]
+postrt <- droplevels(postrt)
 
 ########## Plots with GGplot ###########
 require(plyr)
@@ -160,7 +165,7 @@ barplot + geom_bar(stat="identity", position=position_dodge()) +
                     ymax=condition_mean+condition_sem),
                 width = 0.5, position=position_dodge(0.9)) +
   theme(axis.text = element_text(size = 20), axis.title = element_text(size = 20)) + 
-  coord_cartesian(ylim=c(90,100)) +
+  coord_cartesian(ylim=c(93,100)) +
   scale_x_discrete(labels=c("Interference", "No Interference"), breaks = 1:2, expand = c(0.1,0.1)) +
   ylab("Percentage correctly recalled words in English") +
   scale_fill_grey(labels=c("Interference","No Interference")) +
@@ -168,12 +173,12 @@ barplot + geom_bar(stat="identity", position=position_dodge()) +
 
 
 #### Plot for RTs ###
-ddply(post, .(Condition, Subject_nr), 
+ddply(postrt, .(Condition, Subject_nr), 
       summarise, N=length(RT_new), 
       mean   = mean(RT_new, na.rm = TRUE), 
       sem = sd(RT_new, na.rm = TRUE)/sqrt(N)) -> aggregatedrt
 
-aggregated_means_rt<- ddply(post, .(Condition), 
+aggregated_means_rt<- ddply(postrt, .(Condition), 
                                 summarise,
                                 condition_mean = mean(RT_new,na.rm = T),
                                 condition_sem = sd(RT_new,na.rm = T)/sqrt(length(RT_new[!is.na(RT_new)])))
@@ -211,12 +216,12 @@ barplot + geom_bar(stat="identity", position=position_dodge()) +
   theme_bw()
 
 #### Plot for RTs difference ###
-ddply(post, .(Condition, Subject_nr), 
+ddply(postrt, .(Condition, Subject_nr), 
       summarise, N=length(RTdiff), 
       mean   = mean(RTdiff, na.rm = TRUE), 
       sem = sd(RTdiff, na.rm = TRUE)/sqrt(N)) -> aggregatedrtdiff
 
-aggregated_means_rtdiff<- ddply(post, .(Condition), 
+aggregated_means_rtdiff<- ddply(postrt, .(Condition), 
                             summarise,
                             condition_mean = mean(RTdiff,na.rm = T),
                             condition_sem = sd(RTdiff,na.rm = T)/sqrt(length(RTdiff[!is.na(RTdiff)])))
@@ -248,6 +253,7 @@ barplot + geom_bar(stat="identity", position=position_dodge()) +
                     ymax=condition_mean+condition_sem),
                 width = 0.5, position=position_dodge(0.9)) +
   theme(axis.text = element_text(size = 20), axis.title = element_text(size = 20)) + 
+  coord_cartesian(ylim=c(0,800)) +
   scale_x_discrete(labels=c("Interference", "No Interference"), breaks = 1:2, expand = c(0.1,0.1)) +
   ylab("Speed up in naming latencies from English pre- to posttest (in ms)") +
   scale_fill_grey(labels=c("Interference","No Interference")) +
